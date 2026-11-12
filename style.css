@@ -1,0 +1,100 @@
+body{
+
+    background-color: lightblue;
+}
+h1{
+    color: darkblue;
+    text-align: center;
+}
+h2{
+    color:black;
+}
+
+button {
+    background-color: cornflowerblue;
+    color: azure;
+    padding: 15px 30px;
+    border-radius: 20px;
+    font-size: 18px;
+    margin: 10px;
+    cursor: pointer;
+
+}
+.menu {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+form{
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+}
+.campo{
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+input{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 2px solid blue;
+    border-radius: 8px;
+}
+@media (max-width: 600px) {
+   .menu button{
+       width: 90%;
+       box-sizing: border-box;
+   }
+
+}
+.produto-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    margin-bottom: 15px;
+}
+.status-esgotado{
+    color: red;
+    font-weight: bold;
+}
+.estoque-baixo{
+    color: #d97706;
+    font-weight: bold;
+}
+.estoque-normal{
+    color: limegreen;
+    font-weight: bold;
+}
+.resumo-estoque {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.resumo-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.resumo-card:hover{
+    transform:translate(-4px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+@media (max-width: 600px) {
+    .resumo-estoque {
+        grid-template-columns: 1fr;
+    }
+}
+
+
