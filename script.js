@@ -194,6 +194,10 @@ function exibirEstoque() {
         cartao.appendChild(botaoExcluir);
 
         botaoExcluir.addEventListener("click", function () {
+            if (erroCarregamentoProdutos) {
+                alert("Exclusão bloqueada: não foi possível carregar o estoque!");
+                return;
+            }
             console.log("Botão excluir clicado!");
             const confirmarExclusao = confirm(
                 "Deseja realmente excluir o produto " + produto.nome + "?"
