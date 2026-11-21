@@ -261,7 +261,12 @@ function carregarDados(chave) {
     }
 }
 
-const produtos = JSON.parse(localStorage.getItem("produtos")) || [];
+const produtosCarregados = carregarDados("produtos");
+
+const produtos = produtosCarregados === null ? [] : produtosCarregados;
+
+const erroCarregamentoProdutos = produtosCarregados === null;
+
 const vendasCarregadas = carregarDados("vendas");
 
 const vendas = vendasCarregadas === null ? [] : vendasCarregadas;
@@ -270,6 +275,11 @@ const erroCarregamentoVendas = vendasCarregadas === null;
 console.log("Histórico de vendas:", vendas);
 
 function salvarProdutos() {
+    if (erroCarregamentoProdutos) {
+        console.error("Salvamento de produtos bloqueado!");
+        return;
+    }
+
     localStorage.setItem("produtos", JSON.stringify(produtos));
 }
 // ARMAZENAMENTO DO HISTÓRICO DE VENDAS
